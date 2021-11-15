@@ -1,15 +1,17 @@
 <template>
   <div>
-    <Header/>
+    <Header />
   </div>
 </template>
 <script>
 import Header from "./components/Header.vue";
+import { select, scrollto } from "./utils/Functions";
 export default {
   name: "App",
   components: {
-    Header
+    Header,
   },
+  created() {},
 };
 </script>
 
@@ -32,7 +34,7 @@ a {
   text-decoration: none;
   &:hover {
     color: #73c5eb;
-    text-decoration: none;
+    // text-decoration: none;
   }
 }
 
