@@ -1,4 +1,4 @@
-# portfolio-client
+# Portfolio
 
 ## Project setup
 ```
