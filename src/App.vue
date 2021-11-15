@@ -1,18 +1,21 @@
 <template>
   <div>
-    <!-- <Header /> -->
-    <Footer/>
+    <Header />
+    <Accueil/>
+    <Footer />
   </div>
 </template>
 <script>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+import Accueil from "./components/Accueil.vue";
 import { select, scrollto } from "./utils/Functions";
 export default {
   name: "App",
   components: {
     Header,
     Footer,
+    Accueil,
   },
   created() {},
 };

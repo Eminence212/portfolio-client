@@ -113,14 +113,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Faster+One&family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
 .entete {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  background: rgba(40, 58, 90, 0.9);
+  // background: rgba(40, 58, 90, 0.9);
   &.header-scrolled,
   .header-inner-pages {
     background: rgba(40, 58, 90, 0.9);
@@ -227,6 +227,7 @@ export default {
           text-transform: none;
           font-weight: 500;
           color: #0c3c53;
+           text-decoration: none;
           &:hover {
             color: #47b2e4;
           }
@@ -341,6 +342,7 @@ export default {
       padding: 10px 20px;
       font-size: 15px;
       color: #37517e;
+       text-decoration: none;
       &:hover {
         color: #47b2e4;
       }
@@ -352,6 +354,7 @@ export default {
       &:hover {
         > a {
           color: #47b2e4;
+          text-decoration: none;
         }
       }
     }
