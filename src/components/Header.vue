@@ -120,7 +120,7 @@ export default {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  // background: rgba(40, 58, 90, 0.9);
+  background: rgba(40, 58, 90, 0.9);
   &.header-scrolled,
   .header-inner-pages {
     background: rgba(40, 58, 90, 0.9);

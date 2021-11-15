@@ -1,7 +1,8 @@
 <template>
   <div>
     <Header />
-    <Accueil/>
+    <Accueil />
+    <About/>
     <Footer />
   </div>
 </template>
@@ -9,6 +10,7 @@
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import Accueil from "./components/Accueil.vue";
+import About from "./components/About.vue";
 import { select, scrollto } from "./utils/Functions";
 export default {
   name: "App",
@@ -16,6 +18,7 @@ export default {
     Header,
     Footer,
     Accueil,
+    About,
   },
   created() {},
 };
@@ -54,7 +57,7 @@ h6 {
 }
 
 section {
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 .section-bg {
@@ -63,13 +66,13 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  // padding-bottom: 10px;
   h2 {
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    // margin-bottom: 10px;
+    padding-bottom: 10px;
     position: relative;
     color: #37517e;
     &::before {

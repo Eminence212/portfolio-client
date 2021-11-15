@@ -9,7 +9,6 @@ import "aos/dist/aos.css";
 Vue.use(AOS.init());
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
-
 new Vue({
   render: (h) => h(App),
 }).$mount("#app");
