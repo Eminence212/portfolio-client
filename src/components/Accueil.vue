@@ -152,6 +152,7 @@ export default {
     .btn-get-started {
       font-size: 16px;
       padding: 10px 24px 11px 24px;
+      margin-bottom: 30px;
     }
   }
 }

@@ -122,17 +122,6 @@ export default {
     }
   }
   .card {
-    // position: relative;
-    // border: 0;
-    // display: flex;
-    // padding: 10px;
-    // flex-direction: columnrow;
-    // -webkit-box-orient: vertical;
-    // -webkit-box-direction: normal;
-    // min-width: 0;
-    // word-wrap: break-word;
-    // background-color: #fff;
-    // background-clip: border-box;
     border: 0;
     border-radius: 0.25em;
     box-shadow: 0 10px 20px 0 rgba(109, 109, 109, 0.1);
