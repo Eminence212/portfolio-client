@@ -2,7 +2,8 @@
   <div>
     <Header />
     <Accueil />
-    <About/>
+    <About />
+    <Services :services="services" />
     <Footer />
   </div>
 </template>
@@ -11,6 +12,7 @@ import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import Accueil from "./components/Accueil.vue";
 import About from "./components/About.vue";
+import Services from "./components/Services.vue";
 import { select, scrollto } from "./utils/Functions";
 export default {
   name: "App",
@@ -19,8 +21,79 @@ export default {
     Footer,
     Accueil,
     About,
+    Services,
   },
-  created() {},
+  data() {
+    return {
+      services: [],
+      showAddTask: false,
+    };
+  },
+  async created() {
+    this.services = await this.fetchServices();
+  },
+  methods: {
+    async fetchServices() {
+      const data = [
+        {
+          id: 1,
+          title: "GESTION DE PROJETS WEB & MOBILE",
+          icon: "bx bx-globe",
+          description:
+            "Site vitrine, corporate, évènementiel, e-commerce, intranet, application mobile.",
+        },
+        {
+          id: 2,
+          title: "INTÉGRATION WEB",
+          icon: "bx bxs-edit",
+          description:
+            "Des intégrations HTML / CSS respectueuses des standards du Web.",
+        },
+        {
+          id: 3,
+          title: "DÉVELOPPEMENTS SPÉCIFIQUES",
+          icon: "bx bxs-wrench",
+          description:
+            "Des outils adaptés à votre coeur de métier, applications et solutions personnalisées.",
+        },
+        {
+          id: 4,
+          title: "RÉFÉRENCEMENT NATUREL",
+          icon: "bx bx-check-square",
+          description:
+            "Affichage sémantique des informations, des pages propres pour un référencement optimal.",
+        },
+        {
+          id: 5,
+          title: "CONCEPTION GRAPHIQUE ET WEBDESIGN",
+          icon: "bx bx-edit-alt",
+          description:
+            "Logos, templates Web, plaquettes publicitaires, cartes de visite, newsletters...",
+        },
+        {
+          id: 6,
+          title: "DYNAMISME DES PAGES",
+          icon: "bx bx-sync",
+          description:
+            "Des animations de contenu non intrusives pour embellir votre projet.",
+        },
+        {
+          id: 7,
+          title: "INTERFACE D'ADMINISTRATION",
+          icon: "bx bxs-cog",
+          description:
+            "Outils spécifiques au bon fonctionnement  de votre entreprise.",
+        },
+        {
+          id: 8,
+          title: "RESPONSIVE DESIGN",
+          icon: "bx bx-repost",
+          description: "Compatible à tous supports : tablette, mobile...",
+        },
+      ];
+      return data;
+    },
+  },
 };
 </script>
 
