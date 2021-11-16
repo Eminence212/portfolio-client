@@ -72,7 +72,6 @@ export default {
     justify-content: center !important;
     align-items: center !important;
     .icon-box {
-      // position: relative;
       width: 100%;
     }
   }

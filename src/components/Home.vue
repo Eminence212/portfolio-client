@@ -14,7 +14,7 @@
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          <span class="accueil__titre" id="text_accueil">
+          <span class="accueil__title" id="text_accueil">
             <!-- Des meilleures solutions pour votre entreprise -->
             Je suis Eminence MULEMA NOWA ,
           </span>
@@ -77,7 +77,7 @@ export default {
     padding-top: 72px;
   }
   h1,
-  &__titre {
+  &__title {
     margin: 0 0 10px 0;
     font-family: "Jost", sans-serif;
     font-size: 48px;
@@ -114,6 +114,19 @@ export default {
   }
 }
 @media (max-width: 1024px) {
+  .accueil {
+    &__title {
+      margin: 0;
+    }
+    h2 {
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+    .btn-get-started {
+      margin: 0;
+    }
+  }
   .btn-get-started {
     font-size: 16px;
     padding: 10px 24px 11px 24px;
@@ -133,6 +146,12 @@ export default {
       img {
         width: 50%;
       }
+    }
+    &__title {
+      font-size: 30px;
+    }
+    h2 {
+      margin-bottom: 0;
     }
   }
   .btn-get-started {
