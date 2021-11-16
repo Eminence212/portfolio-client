@@ -31,7 +31,7 @@
                   <a href="#"><i class="bx bxl-instagram"></i></a>
                   <a href="#"><i class="bx bxl-skype"></i></a>
                   <a
-                    href="https://www.linkedin.com/in/eminence-mulema-895407a7/"
+                    href="https://www.linkedin.com/in/eminence-mulema-895407a7"
                     ><i class="bx bxl-linkedin"></i
                   ></a>
                 </div>
@@ -88,7 +88,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .about {
   img {
     height: 300px;

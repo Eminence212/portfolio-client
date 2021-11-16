@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .services {
   .row {
     margin-bottom: 15px;

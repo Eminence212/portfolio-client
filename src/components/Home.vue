@@ -39,7 +39,7 @@
         >
           <img
             id="imageAccueil"
-            src="../assets/profil.svg"
+            src="../assets/hero-img.png"
             class="img-fluid"
             alt="Photo de Eminence Mulema nowa : développeur full stack"
           />
@@ -51,11 +51,11 @@
 
 <script>
 export default {
-  name: "Accueil",
+  name: "Home",
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @keyframes up-down {
   0% {
     transform: translateY(10px);
@@ -108,6 +108,13 @@ export default {
     animation: up-down 2s ease-in-out infinite alternate-reverse both;
   }
 }
+@media (max-width: 1024px) {
+  .btn-get-started {
+    font-size: 16px;
+    padding: 10px 24px 11px 24px;
+    margin-bottom: 30px;
+  }
+}
 @media (max-width: 991px) {
   .accueil {
     height: 100vh;
@@ -122,6 +129,11 @@ export default {
         width: 50%;
       }
     }
+  }
+  .btn-get-started {
+    font-size: 16px;
+    padding: 10px 24px 11px 24px;
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 768px) {
@@ -140,6 +152,11 @@ export default {
         width: 60%;
       }
     }
+  }
+  .btn-get-started {
+    font-size: 16px;
+    padding: 10px 24px 11px 24px;
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 575px) {

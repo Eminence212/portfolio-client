@@ -174,7 +174,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .portfolio {
   #portfolio-flters {
     list-style: none;

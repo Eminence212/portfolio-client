@@ -1,37 +1,41 @@
 <template>
   <div>
     <Header />
-    <Accueil />
+    <Home />
     <About />
     <Services :services="services" />
     <Projects :projects="projects" />
+
+    <Contact />
     <Footer />
   </div>
 </template>
 <script>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
-import Accueil from "./components/Accueil.vue";
+import Home from "./components/Home.vue";
 import About from "./components/About.vue";
 import Services from "./components/Services.vue";
 import Projects from "./components/Projects.vue";
+import Contact from "./components/Contact.vue";
 import { select, scrollto } from "./utils/Functions";
 export default {
   name: "App",
   components: {
     Header,
     Footer,
-    Accueil,
+    Home,
     About,
     Services,
     Projects,
+    Contact,
   },
   data() {
     return {
-      identities:[],
+      identities: [],
       services: [],
       projects: [],
-      skills : [],
+      skills: [],
     };
   },
   async created() {
@@ -109,7 +113,7 @@ export default {
       const skills = [];
       return skills;
     },
-     async fetchIdentities() {
+    async fetchIdentities() {
       const identities = [];
       return identities;
     },
@@ -159,12 +163,12 @@ section {
 
 .section-title {
   text-align: center;
-  // padding-bottom: 10px;
+  padding-bottom: 10px;
   h2 {
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
-    // margin-bottom: 10px;
+    margin-bottom: 10px;
     padding-bottom: 10px;
     position: relative;
     color: #37517e;

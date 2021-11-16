@@ -26,7 +26,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
  .icon-box {
     box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
     padding: 50px 30px;
