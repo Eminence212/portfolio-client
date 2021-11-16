@@ -39,7 +39,7 @@
         >
           <img
             id="imageAccueil"
-            src="../assets/hero-img.png"
+            src="../assets/profil.svg"
             class="img-fluid"
             alt="Photo de Eminence Mulema nowa : développeur full stack"
           />
