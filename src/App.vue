@@ -4,6 +4,7 @@
     <Accueil />
     <About />
     <Services :services="services" />
+    <Projects :projects="projects" />
     <Footer />
   </div>
 </template>
@@ -13,6 +14,7 @@ import Footer from "./components/Footer.vue";
 import Accueil from "./components/Accueil.vue";
 import About from "./components/About.vue";
 import Services from "./components/Services.vue";
+import Projects from "./components/Projects.vue";
 import { select, scrollto } from "./utils/Functions";
 export default {
   name: "App",
@@ -22,19 +24,25 @@ export default {
     Accueil,
     About,
     Services,
+    Projects,
   },
   data() {
     return {
+      identities:[],
       services: [],
-      showAddTask: false,
+      projects: [],
+      skills : [],
     };
   },
   async created() {
+    this.identities = await this.fetchIdentities();
     this.services = await this.fetchServices();
+    this.projects = await this.fetchProjects();
+    this.skills = await this.fetchSkills();
   },
   methods: {
     async fetchServices() {
-      const data = [
+      const services = [
         {
           id: 1,
           title: "GESTION DE PROJETS WEB & MOBILE",
@@ -91,7 +99,19 @@ export default {
           description: "Compatible à tous supports : tablette, mobile...",
         },
       ];
-      return data;
+      return services;
+    },
+    async fetchProjects() {
+      const projects = [];
+      return projects;
+    },
+    async fetchSkills() {
+      const skills = [];
+      return skills;
+    },
+     async fetchIdentities() {
+      const identities = [];
+      return identities;
     },
   },
 };
