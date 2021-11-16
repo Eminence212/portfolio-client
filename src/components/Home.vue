@@ -29,7 +29,12 @@
             </span> -->
           </h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#" class="btn-get-started scrollto">Télécharger le CV</a>
+            <a
+              href="../assets/docs/cv.pdf"
+              class="btn-get-started scrollto"
+              download
+              >Télécharger le CV</a
+            >
           </div>
         </div>
         <div
@@ -39,7 +44,7 @@
         >
           <img
             id="imageAccueil"
-            src="../assets/hero-img.png"
+            src="../assets/img/hero-img.png"
             class="img-fluid"
             alt="Photo de Eminence Mulema nowa : développeur full stack"
           />

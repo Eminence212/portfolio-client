@@ -20,7 +20,9 @@
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li>
-            <a class="getstarted scrollto" href="#">Télécharger le CV</a>
+            <a class="getstarted scrollto" href="../assets/docs/cv.pdf" download
+              >Télécharger le CV</a
+            >
           </li>
         </ul>
         <i class="bx bx-menu mobile-nav-toggle" />
@@ -227,7 +229,7 @@ export default {
           text-transform: none;
           font-weight: 500;
           color: #0c3c53;
-           text-decoration: none;
+          text-decoration: none;
           &:hover {
             color: #47b2e4;
           }
@@ -342,7 +344,7 @@ export default {
       padding: 10px 20px;
       font-size: 15px;
       color: #37517e;
-       text-decoration: none;
+      text-decoration: none;
       &:hover {
         color: #47b2e4;
       }

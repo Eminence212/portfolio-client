@@ -13,7 +13,7 @@
             <div class="card">
               <img
                 id="imageApropos"
-                src="../assets/hero-img.png"
+                src="../assets/img/hero-img.png"
                 class="card-img-top"
                 alt="photo de Eminence Mulema nowa : développeur Full-Stack passionné "
               />
