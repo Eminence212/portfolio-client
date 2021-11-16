@@ -77,7 +77,7 @@ export default {
     font-size: 13px;
     a {
       transition: 0.3s;
-      color: #fff;
+      color: #47b2e4;
       text-decoration: none;
     }
   }
