@@ -1,0 +1,102 @@
+<template>
+  <footer id="footer" class="section-bg">
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; <strong><span>2021 Eminence Mulema</span></strong
+        >. Tous droits réservés
+      </div>
+      <div class="credits">Conçu par <a href="#">Eminence Mulema</a></div>
+    </div>
+  </footer>
+</template>
+<script>
+export default {
+  name: "Footer",
+};
+</script>
+
+<style lang="scss">
+#footer {
+  font-size: 14px;
+  background: #37517e;
+
+  .footer-top {
+    padding: 60px 0 30px 0;
+    background: #fff;
+
+    h4 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #37517e;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .footer-links {
+      margin-bottom: 30px;
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        i {
+          padding-right: 2px;
+          color: #47b2e4;
+          font-size: 18px;
+          line-height: 1;
+        }
+        li {
+          padding: 10px 0;
+          display: flex;
+          align-items: center;
+          &:first-child {
+            padding-top: 0;
+          }
+        }
+        a {
+          color: #777777;
+          transition: 0.3s;
+          display: inline-block;
+          line-height: 1;
+          &:hover {
+            text-decoration: none;
+            color: #47b2e4;
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+  }
+  .copyright {
+    float: left;
+  }
+  .credits {
+    float: right;
+    font-size: 13px;
+    a {
+      transition: 0.3s;
+      color: #47b2e4;
+      text-decoration: none;
+    }
+  }
+}
+@media (max-width: 768px) {
+  #footer {
+    .footer-bottom {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .copyright {
+      text-align: center;
+      float: none;
+    }
+    .credits {
+      text-align: center;
+      float: none;
+      padding-top: 4px;
+    }
+  }
+}
+</style>
