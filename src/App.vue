@@ -2,11 +2,14 @@
   <div>
     <Header />
     <Home />
-    <About />
-    <Services :services="services" />
-    <Projects :projects="projects" />
+    <main id="main">
+      <About />
+      <Services :services="services" />
+      <Projects :projects="projects" />
+      <Skills :skills="skills" />
+      <Contact />
+    </main>
 
-    <Contact />
     <Footer />
   </div>
 </template>
@@ -18,6 +21,7 @@ import About from "./components/About.vue";
 import Services from "./components/Services.vue";
 import Projects from "./components/Projects.vue";
 import Contact from "./components/Contact.vue";
+import Skills from "./components/Skills.vue";
 import { select, scrollto } from "./utils/Functions";
 export default {
   name: "App",
@@ -29,6 +33,7 @@ export default {
     Services,
     Projects,
     Contact,
+    Skills,
   },
   data() {
     return {
@@ -110,7 +115,56 @@ export default {
       return projects;
     },
     async fetchSkills() {
-      const skills = [];
+      const skills = [
+        {
+          id: 1,
+          name: "html-css",
+          level: 90,
+          type_id: 1,
+        },
+          {
+          id: 2,
+          name: "MySQL-SQL-PHP",
+          level: 70,
+          type_id: 1,
+        },
+          {
+          id: 3,
+          name: "SQLSERVER-HFSQL",
+          level: 75,
+          type_id: 1,
+        },
+          {
+          id: 4,
+          name: "Java-jee",
+          level: 70,
+          type_id: 1,
+        },
+          {
+          id: 5,
+          name: "Windev-wordpress",
+          level: 65,
+          type_id: 1,
+        },
+          {
+          id: 6,
+          name: "Reactjs-Nextjs-Vuejs",
+          level: 75,
+          type_id: 1,
+        },
+          {
+          id: 7,
+          name: "Nodejs-Express-Nestjs",
+          level: 65,
+          type_id: 1,
+        },
+          {
+          id: 8,
+          name: "Laravel",
+          level: 50,
+          type_id: 1,
+        },
+      ];
       return skills;
     },
     async fetchIdentities() {
