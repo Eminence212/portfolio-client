@@ -7,7 +7,7 @@
       <Services :services="services" />
       <Projects :projects="projects" :domains="domains" />
       <Skills :skills="skills" />
-      <Contact />
+      <Contact :identities="identities" />
     </main>
     <Footer />
     <Preload />
@@ -56,7 +56,6 @@ export default {
     this.projects = await this.fetchProjects();
     this.skills = await this.fetchSkills();
     this.domains = await this.fetchDomains();
-    console.log("Services : ", this.services);
   },
   methods: {
     async fetchServices() {
@@ -70,56 +69,8 @@ export default {
       return projects;
     },
     async fetchSkills() {
-      const skills = [
-        {
-          id: 1,
-          name: "html-css",
-          level: 90,
-          type_id: 1,
-        },
-        {
-          id: 2,
-          name: "MySQL-SQL-PHP",
-          level: 70,
-          type_id: 1,
-        },
-        {
-          id: 3,
-          name: "SQLSERVER-HFSQL",
-          level: 75,
-          type_id: 1,
-        },
-        {
-          id: 4,
-          name: "Java-jee",
-          level: 70,
-          type_id: 1,
-        },
-        {
-          id: 5,
-          name: "Windev-wordpress",
-          level: 65,
-          type_id: 1,
-        },
-        {
-          id: 6,
-          name: "Reactjs-Nextjs-Vuejs",
-          level: 75,
-          type_id: 1,
-        },
-        {
-          id: 7,
-          name: "Nodejs-Express-Nestjs",
-          level: 65,
-          type_id: 1,
-        },
-        {
-          id: 8,
-          name: "Laravel",
-          level: 50,
-          type_id: 1,
-        },
-      ];
+      const res = await Axios.get("http://localhost:8000/api/skills");
+      const skills = await res.data;
       return skills;
     },
     async fetchIdentities() {
@@ -128,28 +79,8 @@ export default {
       return identities;
     },
     async fetchDomains() {
-      const domains = [
-        {
-          id: 1,
-          name: "TOUS",
-          value: 1,
-        },
-        {
-          id: 2,
-          name: "WEB",
-          value: 0,
-        },
-        {
-          id: 3,
-          name: "MOBILE",
-          value: 0,
-        },
-        {
-          id: 4,
-          name: "GRAPHIQUE",
-          value: 0,
-        },
-      ];
+      const res = await Axios.get("http://localhost:8000/api/domains");
+      const domains = await res.data;
       return domains;
     },
   },

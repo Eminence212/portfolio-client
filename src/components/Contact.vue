@@ -11,8 +11,7 @@
               <i class="bx bx-target-lock"></i>
               <h4>Adresse:</h4>
               <p>
-                13, Avenue SELON, Q2, Commune de N'djili , Ville de Kinshasa -
-                RDCongo
+                {{ identities.adresse }}
               </p>
             </div>
             <div class="email">
@@ -20,14 +19,14 @@
                 ><i class="bx bxs-envelope"></i
               ></a>
               <h4>Email:</h4>
-              <p>mulemanowa@gmail.com</p>
+              <p>{{ identities.email }}</p>
             </div>
             <div class="phone">
-              <a href="tel:00243823512934"><i class="bx bxs-phone"></i></a>
+              <a :href="['tel:'+ identities.phoneNumber ]"><i class="bx bxs-phone"></i></a>
               <h4>Téléphone :</h4>
               <p>
-                +243 823 512 934 <br />
-                +243 899 548 513
+                {{ identities.phoneNumber }}<br />
+                00243 899 548 513
               </p>
             </div>
             <div class="phone">
@@ -37,13 +36,13 @@
             </div>
             <h4>Mes réseaux sociaux</h4>
             <div class="social-links">
-              <a href="#"><i class="bx bxl-twitter"></i></a>
-              <a href="https://web.facebook.com/eminence.killy"
+              <a :href="identities.twitter"><i class="bx bxl-twitter"></i></a>
+              <a :href="identities.facebook"
                 ><i class="bx bxl-facebook"></i
               ></a>
-              <a href="#"><i class="bx bxl-instagram"></i></a>
-              <a href="#"><i class="bx bxl-skype"></i></a>
-              <a href="https://www.linkedin.com/in/eminence-mulema-895407a7"
+              <a :href="identities.instagram"><i class="bx bxl-instagram"></i></a>
+              <a :href="identities.skype"><i class="bx bxl-skype"></i></a>
+              <a :href="identities.linkedin"
                 ><i class="bx bxl-linkedin"></i
               ></a>
             </div>
@@ -117,6 +116,9 @@
 <script>
 export default {
   name: "Contact",
+  props: {
+    identities: Object,
+  },
 };
 </script>
 
@@ -312,8 +314,6 @@ export default {
   }
 }
 @media (max-width: 1024px) {
-  .info {
-  }
   .social-links {
     display: flex;
     justify-content: space-between;
