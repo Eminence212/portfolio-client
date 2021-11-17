@@ -23,6 +23,7 @@ import Projects from "./components/Projects.vue";
 import Contact from "./components/Contact.vue";
 import Skills from "./components/Skills.vue";
 import { select, scrollto } from "./utils/Functions";
+import Axios from 'axios'
 export default {
   name: "App",
   components: {
@@ -50,6 +51,7 @@ export default {
     this.projects = await this.fetchProjects();
     this.skills = await this.fetchSkills();
     this.domains = await this.fetchDomains();
+    console.log("Identitées : ",await this.fetchIdentities())
   },
   methods: {
     async fetchServices() {
@@ -221,16 +223,16 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-             technologies:[
-              {
-                id:1,
-                name:"Adobe"
-              },
-              {
-                id:2,
-                name:"illustrator"
-              }
-            ]
+          technologies: [
+            {
+              id: 1,
+              name: "Adobe",
+            },
+            {
+              id: 2,
+              name: "illustrator",
+            },
+          ],
         },
         {
           id: 6,
@@ -244,16 +246,16 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-             technologies:[
-              {
-                id:1,
-                name:"Android studion"
-              },
-              {
-                id:2,
-                name:"Java"
-              }
-            ]
+          technologies: [
+            {
+              id: 1,
+              name: "Android studion",
+            },
+            {
+              id: 2,
+              name: "Java",
+            },
+          ],
         },
         {
           id: 7,
@@ -267,16 +269,16 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-             technologies:[
-              {
-                id:1,
-                name:"Reactjs"
-              },
-              {
-                id:2,
-                name:"Nodejs"
-              }
-            ]
+          technologies: [
+            {
+              id: 1,
+              name: "Reactjs",
+            },
+            {
+              id: 2,
+              name: "Nodejs",
+            },
+          ],
         },
         {
           id: 8,
@@ -290,16 +292,16 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-             technologies:[
-              {
-                id:1,
-                name:"Vuejs"
-              },
-              {
-                id:2,
-                name:"Laravel 2"
-              }
-            ]
+          technologies: [
+            {
+              id: 1,
+              name: "Vuejs",
+            },
+            {
+              id: 2,
+              name: "Laravel 2",
+            },
+          ],
         },
         {
           id: 9,
@@ -313,12 +315,12 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-             technologies:[
-              {
-                id:1,
-                name:"Figma"
-              }
-            ]
+          technologies: [
+            {
+              id: 1,
+              name: "Figma",
+            },
+          ],
         },
       ];
       return projects;
@@ -377,7 +379,8 @@ export default {
       return skills;
     },
     async fetchIdentities() {
-      const identities = [];
+      const res = await Axios.get("http://localhost:8000/api/identities");
+      const identities = await res.data[0];
       return identities;
     },
     async fetchDomains() {
