@@ -13,7 +13,7 @@
         data-aos-delay="100"
       >
         <!-- Filter -->
-        <Domain :key="domain.id" v-for="domain in domains" :domain="domain" />
+        <Domain :key="domain.id" v-for="(domain,index) in domains" :domain="domain" :index="index" />
       </ul>
 
       <div
@@ -30,7 +30,6 @@
     </div>
   </section>
 </template>
-
 <script>
 import Domain from "./Domain.vue";
 import Project from "./Project.vue";

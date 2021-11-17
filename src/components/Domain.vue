@@ -1,9 +1,9 @@
 <template>
   <li
     :data-filter="[
-      domain.value === 1 ? '*' : '.filter-' + domain.name.toLowerCase(),
+      index === 0 ? '*' : '.filter-' + domain.name.toLowerCase(),
     ]"
-    :class="[domain.value === 1 && 'filter-active']"
+    :class="[index === 0 && 'filter-active']"
   >
     {{ domain.name }}
   </li>
@@ -17,6 +17,7 @@ export default {
   name: "Domain",
   props: {
     domain: Object,
+    index: Number,
   },
 
   mounted() {
@@ -51,7 +52,6 @@ export default {
       }
     });
   },
-
 };
 </script>
 

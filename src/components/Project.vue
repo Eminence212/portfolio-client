@@ -36,6 +36,7 @@ export default {
   name: "Project",
   props: {
     project: Object,
+   
   },
   mounted() {
     window.addEventListener("load", () => {

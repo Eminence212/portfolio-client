@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Home :identities="identities"  />
+    <Home :identities="identities" />
     <main id="main">
       <About :identities="identities" />
       <Services :services="services" />
@@ -10,8 +10,8 @@
       <Contact />
     </main>
     <Footer />
-    <Preload/>
-    <BackTotop/>
+    <Preload />
+    <BackTotop />
   </div>
 </template>
 <script>
@@ -39,11 +39,11 @@ export default {
     Contact,
     Footer,
     BackTotop,
-    Preload
+    Preload,
   },
   data() {
     return {
-      identities:{},
+      identities: {},
       services: [],
       projects: [],
       skills: [],
@@ -60,219 +60,13 @@ export default {
   },
   methods: {
     async fetchServices() {
-    const res = await Axios.get("http://localhost:8000/api/services");
+      const res = await Axios.get("http://localhost:8000/api/services");
       const services = await res.data;
       return services;
     },
     async fetchProjects() {
-      const projects = [
-        {
-          id: 1,
-          title: "Application de gestion des correspondances",
-          picture: "../assets/img/realisations/mobile/app1.jpg",
-          domain: {
-            id: 2,
-            name: "MOBILE",
-            value: 0,
-          },
-          resume:
-            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-          technologies: [
-            {
-              id: 1,
-              name: "Flutter",
-            },
-            {
-              id: 2,
-              name: "Dart",
-            },
-          ],
-        },
-        {
-          id: 2,
-          title: "Gestion de l'Energie",
-          picture: "../assets/img/realisations/design/design1.jpg",
-          domain: {
-            id: 3,
-            name: "GRAPHIQUE",
-            value: 0,
-          },
-
-          resume:
-            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-          technologies: [
-            {
-              id: 1,
-              name: "Adobe",
-            },
-            {
-              id: 2,
-              name: "illustrator",
-            },
-          ],
-        },
-        {
-          id: 3,
-          title: "Géolocalisation des établissements scolaires en RDC",
-          picture: "../assets/img/realisations/mobile/app2.jpg",
-          domain: {
-            id: 2,
-            name: "MOBILE",
-            value: 0,
-          },
-
-          resume:
-            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-          technologies: [
-            {
-              id: 1,
-              name: "Flutter",
-            },
-            {
-              id: 2,
-              name: "Dart",
-            },
-          ],
-        },
-        {
-          id: 4,
-          title: "Site web de visite touristique",
-          picture: "../assets/img/realisations/web/app1.jpg",
-          domain: {
-            id: 1,
-            name: "WEB",
-            value: 0,
-          },
-
-          resume:
-            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-          technologies: [
-            {
-              id: 1,
-              name: "HTML",
-            },
-            {
-              id: 2,
-              name: "CSS",
-            },
-            {
-              id: 3,
-              name: "JavaScript",
-            },
-          ],
-        },
-        {
-          id: 5,
-          title: "Coneption graphique",
-          picture: "../assets/img/realisations/design/design2.jpg",
-          domain: {
-            id: 3,
-            name: "GRAPHIQUE",
-            value: 0,
-          },
-
-          resume:
-            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-          technologies: [
-            {
-              id: 1,
-              name: "Adobe",
-            },
-            {
-              id: 2,
-              name: "illustrator",
-            },
-          ],
-        },
-        {
-          id: 6,
-          title: "Suivi et évaluation",
-          picture: "../assets/img/realisations/mobile/app3.jpg",
-          domain: {
-            id: 2,
-            name: "MOBILE",
-            value: 0,
-          },
-
-          resume:
-            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-          technologies: [
-            {
-              id: 1,
-              name: "Android studion",
-            },
-            {
-              id: 2,
-              name: "Java",
-            },
-          ],
-        },
-        {
-          id: 7,
-          title: "Site web pour le parcours scolaire des apprenants en RDC",
-          picture: "../assets/img/realisations/web/app2.jpg",
-          domain: {
-            id: 1,
-            name: "WEB",
-            value: 0,
-          },
-
-          resume:
-            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-          technologies: [
-            {
-              id: 1,
-              name: "Reactjs",
-            },
-            {
-              id: 2,
-              name: "Nodejs",
-            },
-          ],
-        },
-        {
-          id: 8,
-          title: "Site de e-Commerce",
-          picture: "../assets/img/realisations/web/app3.jpg",
-          domain: {
-            id: 1,
-            name: "WEB",
-            value: 0,
-          },
-
-          resume:
-            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-          technologies: [
-            {
-              id: 1,
-              name: "Vuejs",
-            },
-            {
-              id: 2,
-              name: "Laravel 2",
-            },
-          ],
-        },
-        {
-          id: 9,
-          title: "UX Design",
-          picture: "../assets/img/realisations/design/design3.jpg",
-          domain: {
-            id: 3,
-            name: "GRAPHIQUE",
-            value: 0,
-          },
-
-          resume:
-            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
-          technologies: [
-            {
-              id: 1,
-              name: "Figma",
-            },
-          ],
-        },
-      ];
+      const res = await Axios.get("http://localhost:8000/api/projects");
+      const projects = await res.data;
       return projects;
     },
     async fetchSkills() {
