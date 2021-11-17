@@ -11,6 +11,7 @@
     </main>
 
     <Footer />
+    <BackTotop/>
   </div>
 </template>
 <script>
@@ -22,19 +23,21 @@ import Services from "./components/Services.vue";
 import Projects from "./components/Projects.vue";
 import Contact from "./components/Contact.vue";
 import Skills from "./components/Skills.vue";
+import BackTotop from "./components/BackTotop.vue";
 import { select, scrollto } from "./utils/Functions";
 import Axios from "axios";
 export default {
   name: "App",
   components: {
     Header,
-    Footer,
     Home,
     About,
     Services,
     Projects,
-    Contact,
     Skills,
+    Contact,
+    Footer,
+    BackTotop,
   },
   data() {
     return {
