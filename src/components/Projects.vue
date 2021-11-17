@@ -21,7 +21,11 @@
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        <Project :key="project.id" v-for="project in projects" :project="project" />
+        <Project
+          :key="project.id"
+          v-for="project in projects"
+          :project="project"
+        />
       </div>
     </div>
   </section>
@@ -48,6 +52,9 @@ export default {
   #portfolio-flters {
     list-style: none;
     margin-bottom: 20px;
+    ul {
+      flex-wrap: wrap;
+    }
   }
   .portfolio-item {
     position: relative;

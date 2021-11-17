@@ -123,9 +123,18 @@ export default {
             name: "MOBILE",
             value: 0,
           },
-
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+          technologies: [
+            {
+              id: 1,
+              name: "Flutter",
+            },
+            {
+              id: 2,
+              name: "Dart",
+            },
+          ],
         },
         {
           id: 2,
@@ -139,6 +148,16 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+          technologies: [
+            {
+              id: 1,
+              name: "Adobe",
+            },
+            {
+              id: 2,
+              name: "illustrator",
+            },
+          ],
         },
         {
           id: 3,
@@ -152,6 +171,16 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+          technologies: [
+            {
+              id: 1,
+              name: "Flutter",
+            },
+            {
+              id: 2,
+              name: "Dart",
+            },
+          ],
         },
         {
           id: 4,
@@ -165,6 +194,20 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+          technologies: [
+            {
+              id: 1,
+              name: "HTML",
+            },
+            {
+              id: 2,
+              name: "CSS",
+            },
+            {
+              id: 3,
+              name: "JavaScript",
+            },
+          ],
         },
         {
           id: 5,
@@ -178,6 +221,16 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+             technologies:[
+              {
+                id:1,
+                name:"Adobe"
+              },
+              {
+                id:2,
+                name:"illustrator"
+              }
+            ]
         },
         {
           id: 6,
@@ -191,6 +244,16 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+             technologies:[
+              {
+                id:1,
+                name:"Android studion"
+              },
+              {
+                id:2,
+                name:"Java"
+              }
+            ]
         },
         {
           id: 7,
@@ -204,6 +267,16 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+             technologies:[
+              {
+                id:1,
+                name:"Reactjs"
+              },
+              {
+                id:2,
+                name:"Nodejs"
+              }
+            ]
         },
         {
           id: 8,
@@ -217,6 +290,16 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+             technologies:[
+              {
+                id:1,
+                name:"Vuejs"
+              },
+              {
+                id:2,
+                name:"Laravel 2"
+              }
+            ]
         },
         {
           id: 9,
@@ -230,6 +313,12 @@ export default {
 
           resume:
             "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+             technologies:[
+              {
+                id:1,
+                name:"Figma"
+              }
+            ]
         },
       ];
       return projects;
