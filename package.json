@@ -14,7 +14,8 @@
     "boxicons": "^2.0.9",
     "core-js": "^3.6.5",
     "isotope-layout": "^3.0.6",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
