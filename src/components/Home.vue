@@ -3,6 +3,7 @@
     <div class="container">
       <div class="row">
         <div
+          v-if="identities.firstName !== undefined"
           class="
             col-lg-6
             d-flex
@@ -16,7 +17,8 @@
         >
           <span class="accueil__title" id="text_accueil">
             <!-- Des meilleures solutions pour votre entreprise -->
-            Je suis Eminence MULEMA NOWA ,
+            {{ "Je suis " + identities.firstName }}
+            {{ identities.lastName }} ,
           </span>
           <h2>
             <span>
@@ -59,6 +61,9 @@
 export default {
   // store: store,
   name: "Home",
+  props: {
+    identities: Object,
+  },
 };
 </script>
 

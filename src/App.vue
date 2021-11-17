@@ -1,16 +1,16 @@
 <template>
   <div>
     <Header />
-    <Home />
+    <Home :identities="identities"  />
     <main id="main">
-      <About />
+      <About :identities="identities" />
       <Services :services="services" />
       <Projects :projects="projects" :domains="domains" />
       <Skills :skills="skills" />
       <Contact />
     </main>
-
     <Footer />
+    <Preload/>
     <BackTotop/>
   </div>
 </template>
@@ -24,6 +24,7 @@ import Projects from "./components/Projects.vue";
 import Contact from "./components/Contact.vue";
 import Skills from "./components/Skills.vue";
 import BackTotop from "./components/BackTotop.vue";
+import Preload from "./components/Preload.vue";
 import { select, scrollto } from "./utils/Functions";
 import Axios from "axios";
 export default {
@@ -38,10 +39,11 @@ export default {
     Contact,
     Footer,
     BackTotop,
+    Preload
   },
   data() {
     return {
-      identities: [],
+      identities:{},
       services: [],
       projects: [],
       skills: [],
@@ -54,67 +56,12 @@ export default {
     this.projects = await this.fetchProjects();
     this.skills = await this.fetchSkills();
     this.domains = await this.fetchDomains();
-    console.log("Identitées : ", this.identities);
+    console.log("Services : ", this.services);
   },
   methods: {
     async fetchServices() {
-      const services = [
-        {
-          id: 1,
-          title: "GESTION DE PROJETS WEB & MOBILE",
-          icon: "bx bx-globe",
-          description:
-            "Site vitrine, corporate, évènementiel, e-commerce, intranet, application mobile.",
-        },
-        {
-          id: 2,
-          title: "INTÉGRATION WEB",
-          icon: "bx bxs-edit",
-          description:
-            "Des intégrations HTML / CSS respectueuses des standards du Web.",
-        },
-        {
-          id: 3,
-          title: "DÉVELOPPEMENTS SPÉCIFIQUES",
-          icon: "bx bxs-wrench",
-          description:
-            "Des outils adaptés à votre coeur de métier, applications et solutions personnalisées.",
-        },
-        {
-          id: 4,
-          title: "RÉFÉRENCEMENT NATUREL",
-          icon: "bx bx-check-square",
-          description:
-            "Affichage sémantique des informations, des pages propres pour un référencement optimal.",
-        },
-        {
-          id: 5,
-          title: "CONCEPTION GRAPHIQUE ET WEBDESIGN",
-          icon: "bx bx-edit-alt",
-          description:
-            "Logos, templates Web, plaquettes publicitaires, cartes de visite, newsletters...",
-        },
-        {
-          id: 6,
-          title: "DYNAMISME DES PAGES",
-          icon: "bx bx-sync",
-          description:
-            "Des animations de contenu non intrusives pour embellir votre projet.",
-        },
-        {
-          id: 7,
-          title: "INTERFACE D'ADMINISTRATION",
-          icon: "bx bxs-cog",
-          description:
-            "Outils spécifiques au bon fonctionnement  de votre entreprise.",
-        },
-        {
-          id: 8,
-          title: "RESPONSIVE DESIGN",
-          icon: "bx bx-repost",
-          description: "Compatible à tous supports : tablette, mobile...",
-        },
-      ];
+    const res = await Axios.get("http://localhost:8000/api/services");
+      const services = await res.data;
       return services;
     },
     async fetchProjects() {
