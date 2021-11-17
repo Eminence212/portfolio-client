@@ -23,7 +23,7 @@ import Projects from "./components/Projects.vue";
 import Contact from "./components/Contact.vue";
 import Skills from "./components/Skills.vue";
 import { select, scrollto } from "./utils/Functions";
-import Axios from 'axios'
+import Axios from "axios";
 export default {
   name: "App",
   components: {
@@ -51,7 +51,7 @@ export default {
     this.projects = await this.fetchProjects();
     this.skills = await this.fetchSkills();
     this.domains = await this.fetchDomains();
-    console.log("Identitées : ",await this.fetchIdentities())
+    console.log("Identitées : ", this.identities);
   },
   methods: {
     async fetchServices() {
