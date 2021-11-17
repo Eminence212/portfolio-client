@@ -21,9 +21,9 @@ export default {
 
   mounted() {
     window.addEventListener("load", () => {
-      let _container = select(".portfolio-container");
-      if (_container) {
-        let portfolioIsotope = new Isotope(_container, {
+      let portfolioContainer = select(".portfolio-container");
+      if (portfolioContainer) {
+        let portfolioIsotope = new Isotope(portfolioContainer, {
           itemSelector: ".portfolio-item",
         });
 
@@ -51,6 +51,7 @@ export default {
       }
     });
   },
+
 };
 </script>
 

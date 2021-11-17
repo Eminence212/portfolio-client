@@ -1,5 +1,4 @@
 import Vue from "vue";
-import App from "./App.vue";
 import AOS from "aos";
 import Isotope from "isotope-layout";
 import { BootstrapVue } from "bootstrap-vue";
@@ -8,8 +7,9 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import "boxicons/css/boxicons.min.css";
 import "aos/dist/aos.css";
 import "isotope-layout/dist/isotope.pkgd.min.js";
-import Vuex from "vuex";
-Vue.use(Vuex);
+import App from "./App";
+// import Vuex from "vuex";
+// Vue.use(Vuex);
 Vue.use(AOS.init());
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
