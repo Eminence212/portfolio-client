@@ -12,10 +12,8 @@
         data-aos="fade-up"
         data-aos-delay="100"
       >
-        <li data-filter="*" class="filter-active">TOUS</li>
-        <li data-filter=".filter-app">MOBILE</li>
-        <li data-filter=".filter-card">WEB</li>
-        <li data-filter=".filter-web">GRAPHIQUE</li>
+        <!-- Filter -->
+        <Domain :key="domain.id" v-for="domain in domains" :domain="domain" />
       </ul>
 
       <div
@@ -23,153 +21,24 @@
         data-aos="fade-up"
         data-aos-delay="200"
       >
-      
-
-       Projects
-
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-img">
-            <img
-              src="/assets/img/portfolio/appmobile/app2.jpg"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="portfolio-info">
-            <h4>Géolocalisation des établissements scolaires en RDC</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              molestias vel fugit minus ullam sed, veniam suscipit illo
-              perferendis ab beatae, eveniet odio nesciunt consectetur odit.
-              Recusandae quos unde omnis?
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-img">
-            <img
-              src="assets/img/portfolio/appweb/app1.jpg"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="portfolio-info">
-            <h4>Site web de visite touristique</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Reiciendis aspernatur doloribus officia ipsam nisi eum dicta
-              veniam natus quisquam eligendi aliquam, facilis quod, iure unde
-              tempora ipsa praesentium vero maiores.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-img">
-            <img
-              src="assets/img/portfolio/design/design2.jpg"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="portfolio-info">
-            <h4>Coneption graphique</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ab
-              dignissimos dolorem, accusamus recusandae mollitia soluta
-              blanditiis porro, sapiente fuga at perspiciatis magnam excepturi,
-              aspernatur eaque nostrum doloribus debitis odit.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-img">
-            <img
-              src="assets/img/portfolio/appmobile/app3.jpg"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="portfolio-info">
-            <h4>Suivi et évaluation</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-              repudiandae adipisci beatae necessitatibus nam, omnis deserunt
-              iste eveniet et incidunt eos expedita illo magni, praesentium in,
-              consectetur quis magnam dignissimos.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-img">
-            <img
-              src="assets/img/portfolio/appweb/app2.jpg"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="portfolio-info">
-            <h4>Site web pour le parcours scolaire des apprenants en RDC</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Accusamus enim in blanditiis possimus earum saepe aperiam ipsum?
-              Aliquam consequatur doloremque soluta tenetur quibusdam eaque,
-              repudiandae dolorem quis sapiente, quaerat incidunt.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-img">
-            <img
-              src="assets/img/portfolio/appweb/app3.jpg"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="portfolio-info">
-            <h4>Site de e-Commerce</h4>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem
-              distinctio facilis deserunt nesciunt ipsa quaerat, debitis
-              temporibus dolor corrupti vero ad quos incidunt illo dolore
-              molestias. Pariatur vel porro commodi?
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-img">
-            <img
-              src="assets/img/portfolio/design/design3.jpg"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="portfolio-info">
-            <h4>UX Design</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Accusantium quisquam ut, nemo quos ea dolorum animi sequi
-              dignissimos similique temporibus beatae blanditiis rem adipisci
-              consequuntur omnis repellat non magni accusamus.
-            </p>
-          </div>
-        </div>
-         -->
+        <Project :key="project.id" v-for="project in projects" :project="project" />
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import Domain from "./Domain.vue";
+import Project from "./Project.vue";
 export default {
   name: "Projects",
   props: {
     projects: Array,
+    domains: Array,
+  },
+  components: {
+    Domain,
+    Project,
   },
 };
 </script>
@@ -179,30 +48,9 @@ export default {
   #portfolio-flters {
     list-style: none;
     margin-bottom: 20px;
-    li {
-      cursor: pointer;
-      display: inline-block;
-      margin: 10px 5px;
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1;
-      color: #444444;
-      transition: all 0.3s;
-      padding: 8px 20px;
-      border-radius: 50px;
-      font-family: "Poppins", sans-serif;
-      &:hover {
-        background: #47b2e4;
-        color: #fff;
-        cursor: pointer;
-      }
-    }
-    li.filter-active {
-      background: #47b2e4;
-      color: #fff;
-    }
   }
   .portfolio-item {
+    position: relative;
     margin: 15px 0;
     .portfolio-img {
       overflow: hidden;

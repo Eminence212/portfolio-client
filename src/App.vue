@@ -5,7 +5,7 @@
     <main id="main">
       <About />
       <Services :services="services" />
-      <Projects :projects="projects" />
+      <Projects :projects="projects" :domains="domains" />
       <Skills :skills="skills" />
       <Contact />
     </main>
@@ -41,6 +41,7 @@ export default {
       services: [],
       projects: [],
       skills: [],
+      domains: [],
     };
   },
   async created() {
@@ -48,6 +49,7 @@ export default {
     this.services = await this.fetchServices();
     this.projects = await this.fetchProjects();
     this.skills = await this.fetchSkills();
+    this.domains = await this.fetchDomains();
   },
   methods: {
     async fetchServices() {
@@ -111,7 +113,125 @@ export default {
       return services;
     },
     async fetchProjects() {
-      const projects = [];
+      const projects = [
+        {
+          id: 1,
+          title: "Application de gestion des correspondances",
+          picture: "../assets/img/realisations/mobile/app1.jpg",
+          domain: {
+            id: 2,
+            name: "MOBILE",
+            value: 0,
+          },
+
+          resume:
+            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+        },
+        {
+          id: 2,
+          title: "Gestion de l'Energie",
+          picture: "../assets/img/realisations/design/design1.jpg",
+          domain: {
+            id: 3,
+            name: "GRAPHIQUE",
+            value: 0,
+          },
+
+          resume:
+            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+        },
+        {
+          id: 3,
+          title: "Géolocalisation des établissements scolaires en RDC",
+          picture: "../assets/img/realisations/mobile/app2.jpg",
+          domain: {
+            id: 2,
+            name: "MOBILE",
+            value: 0,
+          },
+
+          resume:
+            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+        },
+        {
+          id: 4,
+          title: "Site web de visite touristique",
+          picture: "../assets/img/realisations/web/app1.jpg",
+          domain: {
+            id: 1,
+            name: "WEB",
+            value: 0,
+          },
+
+          resume:
+            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+        },
+        {
+          id: 5,
+          title: "Coneption graphique",
+          picture: "../assets/img/realisations/design/design2.jpg",
+          domain: {
+            id: 3,
+            name: "GRAPHIQUE",
+            value: 0,
+          },
+
+          resume:
+            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+        },
+        {
+          id: 6,
+          title: "Suivi et évaluation",
+          picture: "../assets/img/realisations/mobile/app3.jpg",
+          domain: {
+            id: 2,
+            name: "MOBILE",
+            value: 0,
+          },
+
+          resume:
+            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+        },
+        {
+          id: 7,
+          title: "Site web pour le parcours scolaire des apprenants en RDC",
+          picture: "../assets/img/realisations/web/app2.jpg",
+          domain: {
+            id: 1,
+            name: "WEB",
+            value: 0,
+          },
+
+          resume:
+            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+        },
+        {
+          id: 8,
+          title: "Site de e-Commerce",
+          picture: "../assets/img/realisations/web/app3.jpg",
+          domain: {
+            id: 1,
+            name: "WEB",
+            value: 0,
+          },
+
+          resume:
+            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+        },
+        {
+          id: 9,
+          title: "UX Design",
+          picture: "../assets/img/realisations/design/design3.jpg",
+          domain: {
+            id: 3,
+            name: "GRAPHIQUE",
+            value: 0,
+          },
+
+          resume:
+            "Lorem tis corrupti, enim temporibus labore reprehenderit. Incidunt possimus atque nemo est.",
+        },
+      ];
       return projects;
     },
     async fetchSkills() {
@@ -122,43 +242,43 @@ export default {
           level: 90,
           type_id: 1,
         },
-          {
+        {
           id: 2,
           name: "MySQL-SQL-PHP",
           level: 70,
           type_id: 1,
         },
-          {
+        {
           id: 3,
           name: "SQLSERVER-HFSQL",
           level: 75,
           type_id: 1,
         },
-          {
+        {
           id: 4,
           name: "Java-jee",
           level: 70,
           type_id: 1,
         },
-          {
+        {
           id: 5,
           name: "Windev-wordpress",
           level: 65,
           type_id: 1,
         },
-          {
+        {
           id: 6,
           name: "Reactjs-Nextjs-Vuejs",
           level: 75,
           type_id: 1,
         },
-          {
+        {
           id: 7,
           name: "Nodejs-Express-Nestjs",
           level: 65,
           type_id: 1,
         },
-          {
+        {
           id: 8,
           name: "Laravel",
           level: 50,
@@ -170,6 +290,31 @@ export default {
     async fetchIdentities() {
       const identities = [];
       return identities;
+    },
+    async fetchDomains() {
+      const domains = [
+        {
+          id: 1,
+          name: "TOUS",
+          value: 1,
+        },
+        {
+          id: 2,
+          name: "WEB",
+          value: 0,
+        },
+        {
+          id: 3,
+          name: "MOBILE",
+          value: 0,
+        },
+        {
+          id: 4,
+          name: "GRAPHIQUE",
+          value: 0,
+        },
+      ];
+      return domains;
     },
   },
 };
