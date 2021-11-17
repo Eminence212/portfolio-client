@@ -7,16 +7,32 @@
 </template>
 
 <script>
+import { select, onscroll } from "../utils/Functions";
 export default {
   name: "BackTotop",
+  mounted() {
+    let backtotop = select(".back-to-top");
+
+    if (backtotop) {
+      const toggleBacktotop = () => {
+        if (window.scrollY > 100) {
+          backtotop.classList.add("active");
+        } else {
+          backtotop.classList.remove("active");
+        }
+      };
+      window.addEventListener("load", toggleBacktotop);
+      document.addEventListener("scroll", toggleBacktotop);
+    }
+  },
 };
 </script>
 
 <style lang="scss">
 .back-to-top {
   position: fixed;
-  visibility: visible;
-  opacity: 1;
+  visibility: hidden;
+  opacity: 0;
   right: 15px;
   bottom: 15px;
   z-index: 996;
