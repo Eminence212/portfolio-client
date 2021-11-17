@@ -7,7 +7,7 @@
   >
     <div class="portfolio-img">
       <img
-        src="../assets/img/realisations/mobile/app1.jpg"
+        :src="project.picture"
         class="img-fluid"
         :alt="project.title"
       />
@@ -36,7 +36,6 @@ export default {
   name: "Project",
   props: {
     project: Object,
-   
   },
   mounted() {
     window.addEventListener("load", () => {

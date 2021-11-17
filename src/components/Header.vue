@@ -20,7 +20,7 @@
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li>
-            <a class="getstarted scrollto" href="../assets/docs/cv.pdf" download
+            <a class="getstarted scrollto" href="./docs/cv.pdf"
               >Télécharger le CV</a
             >
           </li>

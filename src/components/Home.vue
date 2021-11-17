@@ -32,9 +32,8 @@
           </h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a
-              href="../assets/docs/cv.pdf"
+              href="./docs/cv.pdf"
               class="btn-get-started scrollto"
-              download
               >Télécharger le CV</a
             >
           </div>
