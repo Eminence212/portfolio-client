@@ -3,7 +3,6 @@
     <div class="container">
       <div class="row">
         <div
-          v-if="identities.firstName !== undefined"
           class="
             col-lg-6
             d-flex
@@ -16,24 +15,16 @@
           data-aos-delay="200"
         >
           <span class="accueil__title" id="text_accueil">
-            <!-- Des meilleures solutions pour votre entreprise -->
-            {{ "Je suis " + identities.firstName }}
-            {{ identities.lastName }} ,
+            Je suis Eminence MULEMA NOWA
           </span>
           <h2>
             <span>
               Développeur Full Stack, Doué à la création des applications
               Desktop, Web et Mobile.
             </span>
-            <!-- <span>
-              La différence est dans la qualité des
-              services.
-            </span> -->
           </h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a
-              href="./docs/cv.pdf"
-              class="btn-get-started scrollto"
+            <a href="./docs/cv.pdf" class="btn-get-started scrollto"
               >Télécharger le CV</a
             >
           </div>

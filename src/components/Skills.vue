@@ -29,7 +29,16 @@
             vos besoins.
           </p>
 
-          <div class="skills-content">
+          <div class="skills-content" v-if="isLoading"  >
+            <!-- <Skill
+              :key="skill.id"
+              v-for="skill in skills"
+              :name="skill.name"
+              :level="skill.level"
+            /> -->
+            <SkillSkeleton :key="progress" v-for="progress in [1,2,3,4,5,6]" />
+          </div>
+           <div class="skills-content" v-else  >
             <Skill
               :key="skill.id"
               v-for="skill in skills"
@@ -45,14 +54,33 @@
 
 <script>
 import Skill from "./skill.vue";
+import SkillSkeleton from "./skeletons/SkillSkeleton.vue";
 export default {
   name: "Skills",
+  data() {
+    return {
+      isLoading: true,
+    };
+  },
   props: {
     skills: Array,
   },
   components: {
     Skill,
+    SkillSkeleton,
   },
+  mounted() {
+     const intervId = setInterval(() => {
+      if (this.isLoading) {
+        if (this.skills.length > 0) {
+          this.isLoading = false;
+          clearInterval(intervId);
+        } else {
+          this.isLoading = true;
+        }
+      }
+    }, 1000);
+  }
 };
 </script>
 
