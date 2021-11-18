@@ -33,13 +33,7 @@
 </template>
 
 <script>
-import {
-  select,
-  scrollto,
-  navbarlinksActive,
-  headerScrolled,
-  on,
-} from "../utils/Functions";
+import { select, scrollto, onscroll, on } from "../utils/Functions";
 export default {
   name: "Header",
   data() {
@@ -47,31 +41,44 @@ export default {
       menuActif: 0,
     };
   },
-  created() {},
   mounted() {
-    /**
-     * Défilement avec décalage lors du chargement de la page avec des liens de hachage dans l'url
-     */
-    window.addEventListener("load", () => {
-      if (window.location.hash) {
-        if (select(window.location.hash)) {
-          scrollto(window.location.hash);
-        }
-      }
-    });
     /**
      * État actif des liens de la barre de navigation lors du défilement
      */
     let navbarlinks = select("#navbar .scrollto", true);
-    window.addEventListener("load", navbarlinksActive(navbarlinks));
-    document.addEventListener("scroll", navbarlinksActive(navbarlinks));
+    const navbarlinksActive = () => {
+      let position = window.scrollY + 200;
+      navbarlinks.forEach((navbarlink) => {
+        if (!navbarlink.hash) return;
+        let section = select(navbarlink.hash);
+        if (!section) return;
+        if (
+          position >= section.offsetTop &&
+          position <= section.offsetTop + section.offsetHeight
+        ) {
+          navbarlink.classList.add("active");
+        } else {
+          navbarlink.classList.remove("active");
+        }
+      });
+    };
+    window.addEventListener("load", navbarlinksActive);
+    onscroll(document, navbarlinksActive);
+
     /**
      * Basculer la classe .header-scrolled sur #header lorsque la page est défilée
      */
     let selectHeader = select("#header");
     if (selectHeader) {
-      window.addEventListener("load", headerScrolled(selectHeader));
-      document.addEventListener("scroll", headerScrolled(selectHeader));
+      const headerScrolled = () => {
+        if (window.scrollY > 100) {
+          selectHeader.classList.add("header-scrolled");
+        } else {
+          selectHeader.classList.remove("header-scrolled");
+        }
+      };
+      window.addEventListener("load", headerScrolled);
+      onscroll(document, headerScrolled);
     }
     /**
      * Bascule de navigation mobile
@@ -122,7 +129,7 @@ export default {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  background: rgba(40, 58, 90, 0.9);
+
   &.header-scrolled,
   .header-inner-pages {
     background: rgba(40, 58, 90, 0.9);
@@ -208,7 +215,7 @@ export default {
         top: calc(100% + 30px);
         margin: 0;
         padding: 10px 0;
-        z-index: 99;
+        z-index: 9999;
         opacity: 0;
         visibility: hidden;
         background: #fff;

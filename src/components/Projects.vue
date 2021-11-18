@@ -27,7 +27,6 @@
           v-for="(domain, index) in domains"
           :domain="domain"
           :index="index"
-          @show-project="filterProjects"
         />
       </ul>
       <div
@@ -102,18 +101,8 @@ export default {
       }
     }, 1000);
   },
-  methods: {
-    filterProjects(domain) {
-      console.log(domain.name);
-      if (domain.name.toLowerCase().includes("tous")) {
-        console.log(this.projects);
-        this.isAll = true;
-      } else {
-        this.isAll = false;
-        this.projectFilter = domain.projects;
-        console.log(this.projectFilter);
-      }
-    },
+  created() {
+    console.log("create element");
   },
 };
 </script>

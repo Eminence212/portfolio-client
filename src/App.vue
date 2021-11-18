@@ -12,6 +12,7 @@
     <Footer />
     <Preload />
     <BackTotop />
+    <ScrollIndicator/>
   </div>
 </template>
 <script>
@@ -25,6 +26,7 @@ import Contact from "./components/Contact.vue";
 import Skills from "./components/Skills.vue";
 import BackTotop from "./components/BackTotop.vue";
 import Preload from "./components/Preload.vue";
+import ScrollIndicator from "./components/ScrollIndicator.vue";
 import { select, scrollto } from "./utils/Functions";
 import Axios from "axios";
 export default {
@@ -40,6 +42,7 @@ export default {
     Footer,
     BackTotop,
     Preload,
+    ScrollIndicator,
   },
   data() {
     return {
@@ -83,6 +86,18 @@ export default {
       const domains = await res.data;
       return domains;
     },
+  },
+  mounted() {
+    /**
+     * Défilement avec décalage lors du chargement de la page avec des liens de hachage dans l'url
+     */
+    window.addEventListener("load", () => {
+      if (window.location.hash) {
+        if (select(window.location.hash)) {
+          scrollto(window.location.hash);
+        }
+      }
+    });
   },
 };
 </script>
