@@ -36,7 +36,7 @@
         >
           <img
             id="imageAccueil"
-            src="../assets/img/hero-img.png"
+            src="https://res.cloudinary.com/eminence/image/upload/v1637308716/portfolio/hero-img_fg7vwo.png"
             class="img-fluid"
             alt="Photo de Eminence Mulema nowa : développeur full stack"
           />
@@ -47,12 +47,15 @@
 </template>
 
 <script>
-// import store from "../vuex/store";
+import { optimizeImage, select } from "../utils/Functions";
 export default {
   // store: store,
   name: "Home",
   props: {
     identities: Object,
+  },
+  mounted() {
+    optimizeImage("img");
   },
 };
 </script>

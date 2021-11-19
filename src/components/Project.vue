@@ -6,11 +6,7 @@
     ]"
   >
     <div class="portfolio-img">
-      <img
-        :src="project.picture"
-        class="img-fluid"
-        :alt="project.title"
-      />
+      <img :src="project.picture" class="img-fluid" :alt="project.title" />
     </div>
     <div class="portfolio-info">
       <h4>{{ project.title }}</h4>
@@ -29,13 +25,14 @@
 </template>
 
 <script>
-import Isotope from "../../node_modules/isotope-layout";
-import AOS from "../../node_modules/aos";
-import { select, on } from "../utils/Functions";
+import { select, on, optimizeImage } from "../utils/Functions";
 export default {
   name: "Project",
   props: {
     project: Object,
+  },
+  mounted() {
+    optimizeImage("img");
   },
 };
 </script>

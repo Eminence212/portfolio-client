@@ -12,7 +12,7 @@
           data-aos-delay="100"
         >
           <img
-            src="../assets/img/competences.jpg"
+            src="https://res.cloudinary.com/eminence/image/upload/v1637308715/portfolio/competences_earg12.jpg"
             class="img-fluid"
             alt="photo compétences"
           />
@@ -29,16 +29,13 @@
             vos besoins.
           </p>
 
-          <div class="skills-content" v-if="isLoading"  >
-            <!-- <Skill
-              :key="skill.id"
-              v-for="skill in skills"
-              :name="skill.name"
-              :level="skill.level"
-            /> -->
-            <SkillSkeleton :key="progress" v-for="progress in [1,2,3,4,5,6]" />
+          <div class="skills-content" v-if="isLoading">
+            <SkillSkeleton
+              :key="progress"
+              v-for="progress in [1, 2, 3, 4, 5, 6]"
+            />
           </div>
-           <div class="skills-content" v-else  >
+          <div class="skills-content" v-else>
             <Skill
               :key="skill.id"
               v-for="skill in skills"
@@ -70,7 +67,7 @@ export default {
     SkillSkeleton,
   },
   mounted() {
-     const intervId = setInterval(() => {
+    const intervId = setInterval(() => {
       if (this.isLoading) {
         if (this.skills.length > 0) {
           this.isLoading = false;
@@ -80,7 +77,7 @@ export default {
         }
       }
     }, 1000);
-  }
+  },
 };
 </script>
 

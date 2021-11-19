@@ -57,6 +57,7 @@ import Domain from "./Domain.vue";
 import Project from "./Project.vue";
 import ProjectSkeleton from "./skeletons/ProjectSkeleton.vue";
 import ButtonSkeleton from "./skeletons/ButtonSkeleton.vue";
+import { addFilter } from "../utils/Functions";
 
 export default {
   name: "Projects",
@@ -84,6 +85,7 @@ export default {
         if (this.projects.length > 0) {
           this.isLoading = false;
           clearInterval(intervId);
+          addFilter();
         } else {
           this.isLoading = true;
         }
@@ -95,14 +97,12 @@ export default {
         if (this.domains.length > 0) {
           this.domainLoading = false;
           clearInterval(intervId2);
+          addFilter();
         } else {
           this.domainLoading = true;
         }
       }
     }, 1000);
-  },
-  created() {
-    console.log("create element");
   },
 };
 </script>

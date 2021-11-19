@@ -13,7 +13,7 @@
             <div class="card">
               <img
                 id="imageApropos"
-                src="../assets/img/hero-img.png"
+                src="https://res.cloudinary.com/eminence/image/upload/v1637308716/portfolio/hero-img_fg7vwo.png"
                 class="card-img-top"
                 alt="photo de Eminence Mulema nowa : développeur Full-Stack passionné "
               />
