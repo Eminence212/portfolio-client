@@ -1,5 +1,5 @@
 import Isotope from "isotope-layout";
-import AOS from "aos";
+
 /**
  * Fonction pour sélectionner les objets sur le DOM à l'aide des sélecteur
  *    */
@@ -132,9 +132,6 @@ const addFilter = () => {
         portfolioIsotope.arrange({
           filter: e.target.getAttribute("data-filter"),
         });
-        // portfolioIsotope.on("arrangeComplete", function () {
-        //   AOS.refresh();
-        // });
       })
     );
   }
