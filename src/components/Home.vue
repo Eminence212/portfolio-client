@@ -10,6 +10,7 @@
             justify-content-center
             pt-4 pt-lg-0
             order-2 order-lg-1
+            identitie
           "
           data-aos="fade-up"
           data-aos-delay="200"
@@ -114,23 +115,27 @@ export default {
   }
 }
 @media (max-width: 1024px) {
+  .identitie {
+    padding: 0 !important;
+    span {
+      padding-top: 5px;
+    }
+  }
+
   .accueil {
     &__title {
       margin: 0;
+      // display: none;
+       font-size: 10px;
     }
     h2 {
       color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 30px;
-      font-size: 24px;
+      font-size: 12px;
     }
     .btn-get-started {
-      margin: 0;
+      font-size: 1em;
+      padding: 8px 24px 8px 24px;
     }
-  }
-  .btn-get-started {
-    font-size: 16px;
-    padding: 10px 24px 11px 24px;
-    margin-bottom: 30px;
   }
 }
 @media (max-width: 991px) {
@@ -148,7 +153,7 @@ export default {
       }
     }
     &__title {
-      font-size: 30px;
+      font-size: 18px;
     }
     h2 {
       margin-bottom: 0;
@@ -164,7 +169,7 @@ export default {
   .accueil {
     h1 {
       font-size: 1em;
-      line-height: 36px;
+      line-height: 30px;
     }
     h2 {
       font-size: 18px;
@@ -180,7 +185,6 @@ export default {
   .btn-get-started {
     font-size: 16px;
     padding: 10px 24px 11px 24px;
-    margin-bottom: 30px;
   }
 }
 @media (max-width: 575px) {
