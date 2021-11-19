@@ -159,7 +159,7 @@ export default {
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
           },
           body: JSON.stringify(newMessage),
         }
@@ -174,6 +174,7 @@ export default {
         this.message = "";
       } else {
         this.msg = "Votre message n'a pas été envoyé !"
+        }
       //
      this.isLoading = false;
       element.className = "show";
