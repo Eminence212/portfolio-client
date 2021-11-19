@@ -173,9 +173,7 @@ export default {
         this.object = "";
         this.message = "";
       } else {
-        this.msg = "Votre message n'a pas été envoyé !";
-      }
-
+        this.msg = "Votre message n'a pas été envoyé !"
       //
      this.isLoading = false;
       element.className = "show";
