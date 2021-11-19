@@ -12,7 +12,7 @@
     <Footer />
     <Preload />
     <BackTotop />
-    <ScrollIndicator/>
+    <ScrollIndicator />
   </div>
 </template>
 <script>
@@ -62,27 +62,37 @@ export default {
   },
   methods: {
     async fetchServices() {
-      const res = await Axios.get("https://api-portfolio-eminence.herokuapp.com/api/services");
+      const res = await Axios.get(
+        "https://api-portfolio-eminence.herokuapp.com/api/services"
+      );
       const services = await res.data;
       return services;
     },
     async fetchProjects() {
-      const res = await Axios.get("https://api-portfolio-eminence.herokuapp.com/api/projects");
+      const res = await Axios.get(
+        "https://api-portfolio-eminence.herokuapp.com/api/projects"
+      );
       const projects = await res.data;
       return projects;
     },
     async fetchSkills() {
-      const res = await Axios.get("https://api-portfolio-eminence.herokuapp.com/api/skills");
+      const res = await Axios.get(
+        "https://api-portfolio-eminence.herokuapp.com/api/skills"
+      );
       const skills = await res.data;
       return skills;
     },
     async fetchIdentities() {
-      const res = await Axios.get("https://api-portfolio-eminence.herokuapp.com/api/identities");
+      const res = await Axios.get(
+        "https://api-portfolio-eminence.herokuapp.com/api/identities"
+      );
       const identities = await res.data[0];
       return identities;
     },
     async fetchDomains() {
-      const res = await Axios.get("https://api-portfolio-eminence.herokuapp.com/api/domains");
+      const res = await Axios.get(
+        "https://api-portfolio-eminence.herokuapp.com/api/domains"
+      );
       const domains = await res.data;
       return domains;
     },
@@ -176,6 +186,23 @@ section {
   }
   p {
     margin-bottom: 0;
+  }
+}
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #f8f8f8;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #47b2e4;
+  border-radius: 10px;
+  &:hover{
+     background: #37517e;
   }
 }
 </style>
