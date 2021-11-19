@@ -43,6 +43,7 @@ export default {
 @media (max-width: 768px) {
   .progress-container {
     top: 60px;
+     z-index: 0;
   }
 }
 </style>
