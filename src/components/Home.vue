@@ -15,24 +15,16 @@
           data-aos-delay="200"
         >
           <span class="accueil__title" id="text_accueil">
-            <!-- Des meilleures solutions pour votre entreprise -->
-            Je suis Eminence MULEMA NOWA ,
+            Je suis Eminence MULEMA NOWA
           </span>
           <h2>
             <span>
               Développeur Full Stack, Doué à la création des applications
               Desktop, Web et Mobile.
             </span>
-            <!-- <span>
-              La différence est dans la qualité des
-              services.
-            </span> -->
           </h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a
-              href="../assets/docs/cv.pdf"
-              class="btn-get-started scrollto"
-              download
+            <a href="./docs/cv.pdf" class="btn-get-started scrollto"
               >Télécharger le CV</a
             >
           </div>
@@ -44,7 +36,7 @@
         >
           <img
             id="imageAccueil"
-            src="../assets/img/hero-img.png"
+            src="https://res.cloudinary.com/eminence/image/upload/v1637308716/portfolio/hero-img_fg7vwo.png"
             class="img-fluid"
             alt="Photo de Eminence Mulema nowa : développeur full stack"
           />
@@ -55,8 +47,16 @@
 </template>
 
 <script>
+import { optimizeImage, select } from "../utils/Functions";
 export default {
+  // store: store,
   name: "Home",
+  props: {
+    identities: Object,
+  },
+  mounted() {
+    optimizeImage("img");
+  },
 };
 </script>
 

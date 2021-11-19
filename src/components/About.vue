@@ -13,25 +13,23 @@
             <div class="card">
               <img
                 id="imageApropos"
-                src="../assets/img/hero-img.png"
+                src="https://res.cloudinary.com/eminence/image/upload/v1637308716/portfolio/hero-img_fg7vwo.png"
                 class="card-img-top"
                 alt="photo de Eminence Mulema nowa : développeur Full-Stack passionné "
               />
-
               <div class="card-body">
                 <div class="social-links card-text">
-                  <a href="tel:00243823512934"><i class="bx bxs-phone"></i></a>
-                  <a href="mailto:mulemanowa@gmail.com"
+                  <a :href="['tel:'+identities.phoneNumber]"><i class="bx bxs-phone"></i></a>
+                  <a :href="['mailto:' + identities.email]"
                     ><i class="bx bxs-envelope"></i
                   ></a>
-                  <a href=""><i class="bx bxl-twitter"></i></a>
-                  <a href="https://web.facebook.com/eminence.killy"
+                  <a :href="identities.twitter"><i class="bx bxl-twitter"></i></a>
+                  <a :href="identities.facebook"
                     ><i class="bx bxl-facebook"></i
                   ></a>
-                  <a href="#"><i class="bx bxl-instagram"></i></a>
-                  <a href="#"><i class="bx bxl-skype"></i></a>
-                  <a
-                    href="https://www.linkedin.com/in/eminence-mulema-895407a7"
+                  <a :href="identities.instagram"><i class="bx bxl-instagram"></i></a>
+                  <a :href="identities.skype"><i class="bx bxl-skype"></i></a>
+                  <a :href="identities.linkedin"
                     ><i class="bx bxl-linkedin"></i
                   ></a>
                 </div>
@@ -85,6 +83,9 @@
 <script>
 export default {
   name: "About",
+  props: {
+    identities: Object,
+  },
 };
 </script>
 
