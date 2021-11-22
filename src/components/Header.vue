@@ -10,7 +10,7 @@
           </li>
           <li><a class="nav-link scrollto" href="#about">A propos</a></li>
           <li>
-            <a class="nav-link scrollto" href="#services">Servives</a>
+            <a class="nav-link scrollto" href="#services">Services</a>
           </li>
           <li>
             <a class="nav-link scrollto" href="#portfolio">Réalisations</a>
