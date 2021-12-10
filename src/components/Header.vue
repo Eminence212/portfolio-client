@@ -278,7 +278,7 @@ export default {
     .navbar {
       .dropdown {
         .dropdown {
-          ul {
+          ul {374
             left: -90%;
           }
           &:hover {
